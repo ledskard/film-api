@@ -51,7 +51,7 @@ export default class UserController {
             const { id } = req.params;
             const userService = new UserService();
             await userService.delete(id);
-            return res.status(200).json({ success:true });
+            return res.status(204);
         } catch (err) {
             return ProcessError(res, err);
         }
